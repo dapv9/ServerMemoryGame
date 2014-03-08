@@ -1,4 +1,3 @@
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -88,6 +87,84 @@ public class Server {
 		puntero++;
         }
         
+        public void ordenaMayores(){
+		int aux;
+                for (int l=0;l<=10;l++){
+                    may[l]=0;
+                    }
+                
+		for(int h=0;h<=puntero;h++){
+			aux=puntaje[h];
+			if(aux>may[1]){
+				may[10]=may[9];
+				may[9]=may[8];
+				may[8]=may[7];
+				may[7]=may[6];
+				may[6]=may[5];
+				may[5]=may[4];
+				may[4]=may[3];
+				may[3]=may[2];
+				may[2]=may[1];
+				may[1]=aux;
+			}else if(aux>may[2]){
+				may[10]=may[9];
+				may[9]=may[8];
+				may[8]=may[7];
+				may[7]=may[6];
+				may[6]=may[5];
+				may[5]=may[4];
+				may[4]=may[3];
+				may[3]=may[2];
+				may[2]=aux;
+			}else if(aux>may[3]){
+				may[10]=may[9];
+				may[9]=may[8];
+				may[8]=may[7];
+				may[7]=may[6];
+				may[6]=may[5];
+				may[5]=may[4];
+				may[4]=may[3];
+				may[3]=aux;
+			}else if(aux>may[4]){
+				may[10]=may[9];
+				may[9]=may[8];
+				may[8]=may[7];
+				may[7]=may[6];
+				may[6]=may[5];
+				may[5]=may[4];
+				may[4]=aux;
+			}else if(aux>may[5]){
+				may[10]=may[9];
+				may[9]=may[8];
+				may[8]=may[7];
+				may[7]=may[6];
+				may[6]=may[5];
+				may[5]=aux;
+			}else if(aux>may[6]){
+				may[10]=may[9];
+				may[9]=may[8];
+				may[8]=may[7];
+				may[7]=may[6];
+				may[6]=aux;
+			}else if(aux>may[7]){
+				may[10]=may[9];
+				may[9]=may[8];
+				may[8]=may[7];
+				may[7]=aux;
+			}else if(aux>may[8]){
+				may[10]=may[9];
+				may[9]=may[8];
+				may[8]=aux;
+			}else if(aux>may[9]){
+				may[10]=may[9];
+				may[9]=aux;
+			}else if(aux>may[10]){
+				may[10]=aux;
+			}
+			
+		}	
+	}
+	
         public int[] getPuntaje(){
             	ordenaMayores();
 	return may;
