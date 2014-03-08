@@ -1,5 +1,4 @@
 
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -12,6 +11,7 @@ public class Server {
 	String datareceived, substring1, substring2;
 	int puntaje[];
         int puntero=0;
+        int may[];
 	final int PUERTO = 7000;// Puerto que utilizara el servidor
 							// mismo en el cliente
 	String IP_client;
@@ -87,4 +87,9 @@ public class Server {
 		puntaje[puntero]=Integer.parseInt(punt);
 		puntero++;
         }
+        
+        public int[] getPuntaje(){
+            	ordenaMayores();
+	return may;
+	}
 }
