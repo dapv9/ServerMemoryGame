@@ -1,6 +1,5 @@
 
 
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -11,6 +10,8 @@ public class Server {
 	Socket skCliente;
 	ServerSocket skServidor;
 	String datareceived, substring1, substring2;
+	int puntaje[];
+        int puntero=0;
 	final int PUERTO = 7000;// Puerto que utilizara el servidor
 							// mismo en el cliente
 	String IP_client;
@@ -81,4 +82,9 @@ public class Server {
 	public static void main(String[] args) {
 		new Server();
 	}
+	
+	public void setPuntaje(String punt){
+		puntaje[puntero]=Integer.parseInt(punt);
+		puntero++;
+        }
 }
